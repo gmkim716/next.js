@@ -21,6 +21,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "initdb.js", "lib/meals.js", "components/meals/meals-grid.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "initdb.js",
+    "lib/meals.js",
+    "components/meals/meals-grid.tsx",
+    "components/image-picker/image-picker.js"
+  ],
   "exclude": ["node_modules"]
 }
