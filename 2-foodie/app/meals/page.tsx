@@ -6,7 +6,6 @@ import MealsGrid from "@/components/meals/meals-grid";
 
 export default async function MealsPage() {
   const meals = await getMeals();
-  console.log("meals", meals);
 
   return (
     <>

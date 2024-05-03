@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import classes from "./image-picker.module.css";
 import Image from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export default function ImagePicker({
   label,
@@ -27,6 +26,7 @@ export default function ImagePicker({
     const file = event.target.files[0];
 
     if (!file) {
+      setPickedImage(null);
       return;
     }
 
@@ -62,9 +62,10 @@ export default function ImagePicker({
           type="file"
           id={name}
           name={name}
-          accept=".png, .jpeg"
+          accept="image/png, image/jpeg"
           ref={imageInput}
           onChange={handleImageChange}
+          required
         />
         <button
           className={classes.button}
