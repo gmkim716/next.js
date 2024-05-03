@@ -1,22 +1,8 @@
 import ImagePicker from "@/components/image-picker/image-picker";
 import classes from "./page.module.css";
+import { shareMeal } from "@/lib/actions";
 
 export default function ShareMealPage() {
-  async function shareMeal(formData: FormData) {
-    "use server"; // 서버에서만 실행되는 코드, async 함수 내부에서만 사용 가능
-
-    const meal = {
-      title: formData.get("titile"),
-      summary: formData.get("summary"),
-      instructions: formData.get("instructions"),
-      image: formData.get("image"),
-      creator: formData.get("name"), // id="name"인 요소
-      creator_email: formData.get("email"),
-    };
-
-    console.log(meal);
-  }
-
   return (
     <>
       <header className={classes.header}>
@@ -55,7 +41,7 @@ export default function ShareMealPage() {
               required
             ></textarea>
           </p>
-          <ImagePicker label="your image" src="/image" />
+          {/* <ImagePicker label="your image" /> */}
           <p className={classes.actions}>
             <button type="submit">Share Meal</button>
           </p>

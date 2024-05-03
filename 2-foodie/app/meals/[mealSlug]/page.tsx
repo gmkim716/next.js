@@ -27,6 +27,8 @@ export default function MealsDetailsPage({ params }: { params: any }) {
           <p className={classes.summary}>{meal.summary}</p>
           <p
             className={classes.instructions}
+            // dangerouslySetInnerHTML: React에서 HTML을 렌더링할 때 사용
+            // __html: HTML 문자열을 포함하는 객체
             dangerouslySetInnerHTML={{ __html: meal.instructions }}
           />
         </div>
