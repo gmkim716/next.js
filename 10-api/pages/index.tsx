@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 function HomePage(props: any) {
-  const [feedbackItems, setFeedbackItems] = useState([]); 
+  const [feedbackItems, setFeedbackItems] = useState([]);
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const feedbackInputRef = useRef<HTMLTextAreaElement>(null);
@@ -14,23 +14,21 @@ function HomePage(props: any) {
 
     const reqBody = { email: enteredEmail, text: enteredFeedback };
 
-    fetch('/api/feedback', {
-      method: 'POST',
+    fetch("/api/feedback", {
+      method: "POST",
       body: JSON.stringify(reqBody),
       headers: {
-        'Content-Type': 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     })
-      .then(response => response.json())
-      .then((data) => console.log(data));  // { email: 'test@test.com', feedback: 'Some feedback text' }
+      .then((response) => response.json())
+      .then((data) => console.log(data)); // { email: 'test@test.com', feedback: 'Some feedback text' }
   }
-  
+
   function loadFeedbackHandler() {
-    fetch('/api/feedback')
-      .then(response => response.json())
-      .then((data) => 
-        setFeedbackItems(data.feedback)
-    );  
+    fetch("/api/feedback")
+      .then((response) => response.json())
+      .then((data) => setFeedbackItems(data.feedback));
   }
 
   return (
@@ -43,16 +41,15 @@ function HomePage(props: any) {
         </div>
         <div>
           <label htmlFor="feedback">Your Feedback</label>
-          <textarea id="feedback" rows={5} ref={feedbackInputRef}></textarea>  
+          <textarea id="feedback" rows={5} ref={feedbackInputRef}></textarea>
         </div>
         <button>Send Feedback</button>
       </form>
       <hr />
       <button onClick={loadFeedbackHandler}>Get Feedback</button>
       <ul>
-        {Array.isArray(feedbackItems) && feedbackItems.map((item: any) => (
-          <li key={item.id}>{item.text}</li>
-        ))}
+        {Array.isArray(feedbackItems) &&
+          feedbackItems.map((item: any) => <li key={item.id}>{item.text}</li>)}
       </ul>
     </div>
   );
