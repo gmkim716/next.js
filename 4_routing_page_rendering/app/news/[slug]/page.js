@@ -6,6 +6,7 @@ export default function NewsPage({ params }) {
 
   return (
     <article className="news-article">
+      f
       {/* <header>
         <img src={`./images/news/${newsItem?.image}`} alt={newsItem.title} />
         <h1>{newsItem.title}</h1>
