@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useFormState } from "react-dom";
 
 export default function AuthForm({ mode }: { mode: string }) {
-  const [formState, formAction] = useFormState(auth.bind(null, mode), {});
+  const [formState, formAction] = useFormState(auth.bind(null, mode), {
+    errors: {},
+  });
 
   return (
     <form id="auth-form" action={formAction}>
