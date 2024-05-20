@@ -30,18 +30,18 @@ export default function FilteredNewsPage({
     links = [];
   }
 
-  let newsContent = <p>No news found for the selected priod.</p>;
+  let newsContent = <p>No news found for the selected period.</p>;
 
   if (news && news.length > 0) {
     newsContent = <NewsList news={news} />;
   }
 
   if (
-    (selectedYear && !getAvailableNewsYears().includes(selectedYear)) ||
+    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
     (selectedMonth &&
-      !getAvailableNewsMonths(selectedYear).includes(selectedMonth))
+      !getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
   ) {
-    throw new Error("Invalid filter");
+    throw new Error("Invalid filter");  // erorr page 이동 
   }
 
   return (
