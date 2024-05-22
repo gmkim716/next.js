@@ -14,3 +14,9 @@ Next14, App routing 구조에서의 폴더 라우팅 방식
 - Cached된 데이터의 재 설정
 
 - 임의적인(Manually) 캐싱 데이터
+
+## 8. Optimizations
+
+- 이미지 최적화
+
+- 페이지 메타데이터 추가
