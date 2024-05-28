@@ -1,12 +1,12 @@
+import EventList from "@/components/events/event-list";
 import { getFeaturedEvents } from "@/dummy-data";
-import { Inter } from "next/font/google";
 
 export default function Home() {
   const featuredEvents = getFeaturedEvents();
 
   return (
     <div>
-      <EventList />
+      <EventList items={featuredEvents}/>
     </div>
   );
 }

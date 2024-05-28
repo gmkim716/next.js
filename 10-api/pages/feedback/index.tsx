@@ -1,6 +1,6 @@
 import { buildFeedbackPath, extractFeedback } from '../api/feedback'
 
-function FeedbackPage(props: any) {
+export default function FeedbackPage(props: any) {
   return (
     <ul>
       {props.feedbackItems.map((item: any) => (
@@ -19,5 +19,3 @@ export async function getStaticProps() {
     },
   }
 }
-
-export default FeedbackPage; 

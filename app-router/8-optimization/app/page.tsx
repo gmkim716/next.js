@@ -2,15 +2,15 @@ import { Suspense } from "react";
 import { getPosts } from "@/lib/posts";
 import Posts from "@/components/posts";
 
-// 정적 메타데이터
+// 메타데이터: 구글 검색이 되었을 때 링크 아래에 표시될 내용들을 기입, 탭에 표시될 내용 
+
+// 정적
 // export const metadata = {
-//   // 구글 검색이 되었을 때 링크 아래에 표시될 내용들을 기입, 탭에 표시될 내용 
 //   title: "Hello Monkey",
 //   description: "Welcome back!",
 // };
 
-// 동적 메타데이터
-
+// 동적
 export async function generateMetadata() {
   const posts = await getPosts();
   const numberOfPosts = posts.length;
@@ -19,7 +19,6 @@ export async function generateMetadata() {
     description: ''
   }
 }
-
 
 async function LatestPosts() {
   const latestPosts = await getPosts(2);
