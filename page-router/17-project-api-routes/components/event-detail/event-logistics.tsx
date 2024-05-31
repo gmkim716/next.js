@@ -1,11 +1,12 @@
 import Image from "next/image";
 
-import AddressIcon from "../icons/address-icon";
 import DateIcon from "../icons/date-icon";
-import LogisticsItem from "./logistics-item";
-import classes from "./event-logistics.module.css";
+import AddressIcon from "../icons/address-icon";
 
-function EventLogistics(props) {
+import classes from "./event-logistics.module.css";
+import LogisticsItem from "./logistics-item";
+
+function EventLogistics(props: any) {
   const { date, address, image, imageAlt } = props;
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
