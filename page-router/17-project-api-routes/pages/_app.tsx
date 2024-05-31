@@ -1,15 +1,21 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import Layout from '../components/layout/layout';
-import '../styles/globals.css';
+import "../styles/globals.css";
+import Layout from "@/components/layout/layout";
 
-function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
+function MyApp({
+  Component,
+  pageProps,
+}: {
+  Component: React.ComponentType;
+  pageProps: Record<string, any>;
+}) {
   return (
     <Layout>
       <Head>
         <title>Next Events</title>
-        <meta name='description' content='NextJS Events' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name="description" content="NextJS Events" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Component {...pageProps} />
     </Layout>

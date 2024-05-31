@@ -1,4 +1,4 @@
-import classes from './newsletter-registration.module.css';
+import classes from "./newsletter-registration.module.css";
 
 function NewsletterRegistration() {
   function registrationHandler(event: any) {
@@ -15,10 +15,10 @@ function NewsletterRegistration() {
       <form onSubmit={registrationHandler}>
         <div className={classes.control}>
           <input
-            type='email'
-            id='email'
-            placeholder='Your email'
-            aria-label='Your email'
+            type="email"
+            id="email"
+            placeholder="Your email"
+            aria-label="Your email"
           />
           <button>Register</button>
         </div>

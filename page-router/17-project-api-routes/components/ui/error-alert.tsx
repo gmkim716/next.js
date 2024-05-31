@@ -1,6 +1,6 @@
-import classes from './error-alert.module.css';
+import classes from "./error-alert.module.css";
 
-function ErrorAlert(props) {
+function ErrorAlert(props: any) {
   return <div className={classes.alert}>{props.children}</div>;
 }
 
